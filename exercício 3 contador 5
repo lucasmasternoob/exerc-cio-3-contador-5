@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contador 5</title>
+</head>
+<body>
+    <h1>
+        Contador com cinco botões: 
+        aumentar, diminuir, zerar,</br>
+        X2(multiplicar por 2), /3 (dividir por 3)</br>
+        e alterar o valor apartir de um valor inserido.</br>
+        Lógica p/ converter variével tipo text para</br> 
+        number utilizando a estrutura da linguagem.</br>
+        Ao clicar no botão diminuir ele não decrementa valores negativos e </br>
+        conta somente até zero.
+    </h1>
+    <button id = "soma" type="button" onclick="mais()">AUMENTAR</button>
+    <button id = "menos" type="button" onclick="menos()">DIMINUIR</button>
+    <button id = "zero" type="button" onclick="zero()">RESETAR</button>
+    <button id = "x2" type="button" onclick="multi()">X2</button>
+    <button id = "d3" type="button" onclick="dividir()">/3</button></br>
+
+    <button id = "tes" type="button" onclick="test()">teste</button></br>
+
+    <input type="number" id="contador" oninput="" value="0"/>
+
+    <script>
+        var cont = 0;
+        
+        function test(){
+            let cont = document.getElementById("contador").value;
+            let conta = parseFloat(cont);    
+            conta = conta + 1;
+            document.getElementById("contador").value = conta;
+            //console.log(document.getElementById("contador").value);
+           
+        }
+        
+        function multi(){
+            let cont = document.getElementById("contador").value;
+            let conta = parseFloat(cont);    
+            conta = conta * 2;
+            document.getElementById("contador").value = conta;
+        }
+        // function multi(){
+        //     cont = document.getElementById("contador").value;
+        //     cont = (cont * 1) * 2;
+        //     document.getElementById("contador").value = cont;
+        //}    
+
+
+        function dividir(){
+            let cont = document.getElementById("contador").value;
+            let conta = parseInt(cont);    
+            conta = conta / 3;
+            document.getElementById("contador").value = conta;
+        }
+
+        // function dividir(){
+        //     cont = document.getElementById("contador").value;
+        //     cont = (cont * 1) / 3;
+        //     document.getElementById("contador").value = cont;
+        // }    
+
+
+        function mais(){
+            let cont = document.getElementById("contador").value;
+            let conta = parseFloat(cont);    
+            conta = conta + 1;
+            document.getElementById("contador").value = conta;
+        }
+        // function mais(){
+        //     cont = document.getElementById("contador").value;
+        //     cont = (cont * 1) + 1;
+        //     document.getElementById("contador").value = cont; 
+        // }
+
+
+        function menos(){
+            let cont = document.getElementById("contador").value;
+            let conta = parseFloat(cont);
+            document.getElementById("contador").value = conta;
+            if (conta < 0){
+               return conta = 0;
+            }
+            console.log(conta);    
+            conta = conta - 1;
+
+                
+        }
+        
+        
+        // function menos(){
+        //     cont = document.getElementById("contador").value;
+        //     cont = (cont * 1) - 1;
+        //     document.getElementById("contador").value = cont;
+        // }
+
+
+        function zero(){
+            cont = 0;
+            document.getElementById("contador").value = cont;
+        }
+
+    </script>   
+</body>
+</html>
